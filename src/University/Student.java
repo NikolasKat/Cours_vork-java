@@ -51,9 +51,10 @@ public class Student {
         return this.yearOfBirth;
     }
 
-    public void setName(int yearOfBirth) {
+    public void setYear(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }
+
 
 
 

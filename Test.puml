@@ -1,0 +1,34 @@
+@startuml
+
+class Group {
+    + int idGroup;
+    + Student[] arrayOfStudent;
+
+    + getIdGroup()
+    + setName(int idGroup)
+    + int getCountOfStudent()
+    + Student getLink(int id)
+    + deleteStud(int id)
+    + addStud(Student studu)
+    + getArrayOfStudents()
+    + getSortedArrayOfStudent()
+}
+
+class Student {
+    + String name;
+    + String surname;
+    + int yearOfBirth;
+    + int id;
+
+    + getName()
+    + setName(String name)
+    + getSurname()
+    + setSurname(String surname)
+    + getId()
+    + setId(int id)
+    + getYear()
+    + setName(int yearOfBirth)
+}
+
+Group o-- Student
+@enduml
