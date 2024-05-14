@@ -1,8 +1,8 @@
 package University;
 
 public class Group {
-    public int idGroup;
-    public Student[] arrayOfStudent;
+    private int idGroup;
+    private Student[] arrayOfStudent;
 
     Group(int idGroup) {
         this.idGroup = idGroup;
@@ -34,7 +34,7 @@ public class Group {
     public Student getLink(int id) {
         Student stud = null;
         for (int i = 0; i <= arrayOfStudent.length; i++) {
-            if (arrayOfStudent[i].id == id) {
+            if (arrayOfStudent[i].getId() == id) {
                 stud = arrayOfStudent[i];
             }
         }
@@ -47,7 +47,7 @@ public class Group {
         Student[] arr_new = new Student[arrayOfStudent.length-1];
 
         for (int i = 0, k = 0; i <= arrayOfStudent.length; i++) {
-            if (arrayOfStudent[i].id != id) {
+            if (arrayOfStudent[i].getId() != id) {
                 arr_new[k]= arrayOfStudent[i];
                 k++;
             }

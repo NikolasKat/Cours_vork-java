@@ -1,10 +1,13 @@
 package University;
 
-public class Student {
-    public String name;
-    public String surname;
-    public int yearOfBirth;
-    public int id;
+import java.util.ArrayList;
+
+public class Student implements Activist{
+    private String name;
+    private String surname;
+    private int yearOfBirth;
+    private ArrayList<Event> listOfEvents;
+    int id;
 
     Student(String name, String surname) {
         this.name = name;
@@ -61,5 +64,27 @@ public class Student {
     public static void main(String[] args) {
 
 
+    }
+
+    @Override
+    public int countOfEvents() {
+        return this.listOfEvents.size();
+    }
+
+    @Override
+    public int countOfPrizePlace() {
+        return this.listOfEvents.size();
+    }
+
+    @Override
+    public int countOfReports() {
+        return this.listOfEvents.size();
+    }
+
+    @Override
+    public void countOfReportsName() {
+        for (int i = 0; i <= this.listOfEvents.size(); i++) {
+            System.out.println(this.listOfEvents.get(i));
+        }
     }
 }
