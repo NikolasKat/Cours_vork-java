@@ -1,5 +1,8 @@
 package University;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Group {
     private int idGroup;
     private Student[] arrayOfStudent;
@@ -79,7 +82,53 @@ public class Group {
         return sortedPeople;
     }
 
-    public static void main(String[] args) {
-
+    // новое
+    public void showActivistList() {
+        for (int i = 0; i <= arrayOfStudent.length; i++){
+            if (arrayOfStudent[i].activistStatus == true) {
+                System.out.println(arrayOfStudent[i]);
+            }
+        }
     }
+    // новое
+
+
+    // новое
+    public int showActivistListLength() {
+        List<Student> newArray = new ArrayList<Student>();
+        for (int i = 0; i <= arrayOfStudent.length; i++){
+            if (arrayOfStudent[i].activistStatus == true) {
+                newArray.add(arrayOfStudent[i]);
+            }
+        }
+
+        return newArray.size();
+    }
+    // новое
+
+    // новое
+    public int showContractsListLength() {
+        List<Student> newArray = new ArrayList<Student>();
+        for (int i = 0; i <= arrayOfStudent.length; i++){
+            if (arrayOfStudent[i].studStatus == "Контракт") {
+                newArray.add(arrayOfStudent[i]);
+            }
+        }
+
+        return newArray.size();
+    }
+    // новое
+
+    // новое
+    public int showBudgetListLength() {
+        List<Student> newArray = new ArrayList<Student>();
+        for (int i = 0; i <= arrayOfStudent.length; i++){
+            if (arrayOfStudent[i].studStatus == "Бюджет") {
+                newArray.add(arrayOfStudent[i]);
+            }
+        }
+
+        return newArray.size();
+    }
+    // новое
 }

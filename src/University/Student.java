@@ -1,5 +1,6 @@
 package University;
 
+import java.util.Date;
 import java.util.ArrayList;
 
 public class Student implements Activist{
@@ -8,6 +9,11 @@ public class Student implements Activist{
     private int yearOfBirth;
     private ArrayList<Event> listOfEvents;
     int id;
+
+    // новое
+    public boolean activistStatus;
+    public String studStatus;
+    // новое
 
     Student(String name, String surname) {
         this.name = name;
@@ -58,12 +64,42 @@ public class Student implements Activist{
         this.yearOfBirth = yearOfBirth;
     }
 
+    // новое
 
+    public String getStudStatus() {
+        return this.studStatus;
+    }
+    public void setStudStatus(String studStatus) {
+        this.studStatus = studStatus;
+    }
+    public boolean getActivistStatus() {
+        return this.activistStatus;
+    }
+    public void setActivistStatus(boolean activistStatus) {
+        this.activistStatus = activistStatus;
+    }
 
+    public void addEventInList(Event event) {
+        listOfEvents.add(event);
+    }
 
-    public static void main(String[] args) {
+    public void removeEventInList(Date date) {
+        for (int i = 0; i < listOfEvents.size(); i++) {
+            if (((Event) this.listOfEvents).getDateOfEvent() == date) {
+                this.listOfEvents.remove(((Event) this.listOfEvents));
+            }
+        }
+    }
+    public Event showEventInList(Date date) {
+        Event result = null;
 
+        for (int i = 0; i < listOfEvents.size(); i++) {
+            if (((Event) this.listOfEvents).getDateOfEvent() == date) {
+                result = ((Event) this.listOfEvents);
+            }
+        }
 
+        return result;
     }
 
     @Override

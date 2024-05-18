@@ -43,5 +43,13 @@ public class ContractStudent extends Student{
         this.paymentList.add(payment);
     }
 
-
+    //новое
+    public void removePaymentInList(double costOfStudy){
+        for (int i = 0; i <= paymentList.size(); i++) {
+            if (this.costOfStudy == costOfStudy) {
+                this.paymentList.remove(costOfStudy);
+            }
+        }
+    }
+//
 }
